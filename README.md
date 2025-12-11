@@ -47,7 +47,18 @@ That's it! The installer will guide you through the setup process.
 - **Vim/Neovim** with vim-plug plugin manager
 - Pre-configured dotfiles for both
 
-### 🖥️ Terminal Tools
+### 🖥️ Terminal Tools & Emulators
+- **Terminal Emulators**: 
+  - iTerm2 (macOS - installed by default)
+  - Warp (modern, GPU-accelerated)
+  - Alacritty (fast, minimal)
+  - Kitty (feature-rich)
+  - Termux (Android)
+  - Support for Termius + Wave
+- **Dynamic Color Schemes**: 
+  - 256+ color schemes via base16-shell
+  - Random color scheme on each terminal start
+  - Gogh themes for GNOME/Tilix
 - **Multiplexers**: tmux, screen
 - **Modern CLI Tools**: 
   - `ripgrep` (faster grep)
@@ -86,6 +97,41 @@ That's it! The installer will guide you through the setup process.
 - Machine Learning: scikit-learn, TensorFlow, PyTorch
 - Visualization: Matplotlib, Seaborn, Plotly
 - R environment
+
+## 🌍 Platform Support
+
+.floppies works on all major platforms:
+
+### ✅ macOS
+- **Intel Macs** (x86_64) - Fully supported
+- **Apple Silicon** (M1/M2/M3/M4) - Fully supported with native arm64 packages
+- Automatic architecture detection and configuration
+- See [docs/APPLE_SILICON.md](docs/APPLE_SILICON.md) for details
+
+### ✅ Linux
+- **Ubuntu/Debian** - Full support
+- **Fedora/RHEL/CentOS** - Full support  
+- **Arch/Manjaro** - Full support
+- All major distributions covered
+
+### ✅ Windows
+- **WSL** (Windows Subsystem for Linux) - Recommended
+- **Git Bash** - Supported
+- **PowerShell** - Supported via Chocolatey/Scoop
+
+### ✅ Mobile
+- **Android** - Full support via Termux
+- **iOS** - Limited support via iSH or cloud-based solutions
+- See [docs/TERMUX_SETUP.md](docs/TERMUX_SETUP.md) for mobile setup
+
+### ✅ Terminals
+- **iTerm2** (macOS) - Pre-configured with color schemes
+- **Warp** (macOS) - Modern, AI-powered terminal
+- **Alacritty** - Cross-platform, GPU-accelerated
+- **Kitty** - Fast, feature-rich
+- **Termux** (Android) - Full Linux environment
+- **Termius** - Compatible (SSH/SFTP client)
+- **Wave** - Supported via Warp alternative
 
 ## 🗂️ Installation Profiles
 
@@ -348,6 +394,8 @@ Contributions are welcome! Please see our [Contributing Guide](CONTRIBUTING.md) 
 - **[README.md](README.md)** - Main documentation (you are here)
 - **[FAQ](docs/FAQ.md)** - Frequently asked questions
 - **[Platform Setup](docs/PLATFORM_SETUP.md)** - OS-specific guides
+- **[Apple Silicon Support](docs/APPLE_SILICON.md)** - M1/M2/M3 Mac guide
+- **[Termux Setup](docs/TERMUX_SETUP.md)** - Android/Termux installation
 - **[Quick Reference](QUICKREF.md)** - Command cheatsheet
 - **[CHANGELOG](CHANGELOG.md)** - Version history
 - **[ROADMAP](ROADMAP.md)** - Future plans
@@ -399,6 +447,30 @@ Partly open, also abit closed. See [LICENSE](LICENSE) for details.
 - **Modular**: Install only what you need
 - **Safe**: Backs up existing configs
 - **Modern**: Uses current best practices and tools
+- **Personalized**: Dynamic color schemes, customizable configurations
+
+## 🎨 Special Features
+
+### Dynamic Terminal Colors
+Every time you open a new terminal, get a fresh random color scheme from 256+ options:
+- Automatic via base16-shell
+- Configurable themes
+- Works across all terminal emulators
+- See `.bashrc` or `.zshrc` after installation
+
+### Structured & Organized
+Based on analysis of real-world development workflows:
+- Multi-language support (you code in several languages)
+- Everything abstracted and modular
+- Categories for different use cases
+- Professional development setup
+
+### Future-Proof
+- Regular automated updates via GitHub Actions
+- Support for latest tools and versions
+- Apple Silicon native support
+- Linux/Unix compatibility maintained
+- Cross-platform focus
 
 ## 🔗 Related Projects
 

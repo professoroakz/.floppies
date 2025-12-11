@@ -138,6 +138,12 @@ install_full() {
     source "$SCRIPT_DIR/scripts/install-terminal.sh"
     install_terminal_tools
     
+    # Install terminal emulators
+    source "$SCRIPT_DIR/scripts/install-terminals.sh"
+    install_terminal_emulators
+    install_color_schemes
+    configure_random_colors
+    
     # Install container tools
     source "$SCRIPT_DIR/scripts/install-containers.sh"
     install_containers
@@ -159,11 +165,12 @@ custom_installation() {
     echo "1. Development Tools (Git, Node.js, Python, etc.)"
     echo "2. Editors (VSCode, Vim)"
     echo "3. Terminal Tools (tmux, modern CLI tools)"
-    echo "4. Container Tools (Docker, Kubernetes)"
-    echo "5. Security Tools"
-    echo "6. Data Science Tools"
-    echo "7. Cloud Tools (AWS, Azure, GCP)"
-    echo "8. Dotfiles Configuration"
+    echo "4. Terminal Emulators (iTerm2, Warp, color schemes)"
+    echo "5. Container Tools (Docker, Kubernetes)"
+    echo "6. Security Tools"
+    echo "7. Data Science Tools"
+    echo "8. Cloud Tools (AWS, Azure, GCP)"
+    echo "9. Dotfiles Configuration"
     echo "0. Back to main menu"
     echo "=================================="
     echo -n "Select options (comma-separated, e.g., 1,2,3): "
@@ -186,22 +193,28 @@ custom_installation() {
                 install_terminal_tools
                 ;;
             4)
+                source "$SCRIPT_DIR/scripts/install-terminals.sh"
+                install_terminal_emulators
+                install_color_schemes
+                configure_random_colors
+                ;;
+            5)
                 source "$SCRIPT_DIR/scripts/install-containers.sh"
                 install_containers
                 ;;
-            5)
+            6)
                 source "$SCRIPT_DIR/scripts/install-security.sh"
                 install_security_tools
                 ;;
-            6)
+            7)
                 source "$SCRIPT_DIR/scripts/install-datascience.sh"
                 install_datascience_tools
                 ;;
-            7)
+            8)
                 source "$SCRIPT_DIR/scripts/install-cloud.sh"
                 install_cloud_tools
                 ;;
-            8)
+            9)
                 source "$SCRIPT_DIR/scripts/configure-dotfiles.sh"
                 configure_dotfiles
                 ;;
