@@ -290,6 +290,29 @@ You'll be asked if you want to:
 - Restore from backup
 - Remove .floppies directory
 
+## 🧪 Testing
+
+.floppies includes a comprehensive test suite with assertions:
+
+```bash
+# Run all tests
+cd tests
+./run-tests.sh
+
+# Run specific test suites
+./test-install.sh      # Unit tests for install.sh
+./test-scripts.sh      # Unit tests for scripts
+./test-integration.sh  # Integration tests
+```
+
+**Test Coverage:**
+- Unit tests for all installation functions
+- Integration tests for repository structure
+- Syntax validation for all scripts
+- Assertion framework for reliable testing
+
+See [tests/README.md](tests/README.md) for detailed testing documentation.
+
 ## 📚 Usage Examples
 
 ### Setting up a new development machine

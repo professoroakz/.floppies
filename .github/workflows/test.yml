@@ -5,6 +5,7 @@ on:
     paths:
       - 'install.sh'
       - 'scripts/**'
+      - 'tests/**'
   workflow_dispatch:
 
 jobs:
@@ -29,6 +30,12 @@ jobs:
             bash -n "$script"
           done
           
+          echo "Checking test scripts..."
+          for script in tests/*.sh; do
+            echo "Checking $script..."
+            bash -n "$script"
+          done
+          
           echo "✅ All syntax checks passed!"
       
       - name: Run shellcheck
@@ -43,6 +50,55 @@ jobs:
           
           echo "Running shellcheck on module scripts..."
           shellcheck scripts/*.sh || true
+          
+          echo "Running shellcheck on test scripts..."
+          shellcheck tests/*.sh || true
+
+  unit-tests:
+    name: Unit Tests
+    runs-on: ubuntu-latest
+    needs: syntax-check
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Run unit tests
+        run: |
+          cd tests
+          chmod +x *.sh
+          ./test-install.sh
+          ./test-scripts.sh
+
+  integration-tests:
+    name: Integration Tests
+    runs-on: ubuntu-latest
+    needs: syntax-check
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Run integration tests
+        run: |
+          cd tests
+          chmod +x *.sh
+          ./test-integration.sh
+
+  test-suite:
+    name: Full Test Suite
+    runs-on: ubuntu-latest
+    needs: [unit-tests, integration-tests]
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Run complete test suite
+        run: |
+          cd tests
+          chmod +x *.sh
+          ./run-tests.sh
 
   test-core-ubuntu:
     name: Test Core Install (Ubuntu)
