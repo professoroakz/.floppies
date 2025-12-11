@@ -148,6 +148,10 @@ install_full() {
     source "$SCRIPT_DIR/scripts/install-containers.sh"
     install_containers
     
+    # Install productivity tools
+    source "$SCRIPT_DIR/scripts/install-productivity.sh"
+    install_productivity_tools
+    
     # Configure dotfiles
     source "$SCRIPT_DIR/scripts/configure-dotfiles.sh"
     configure_dotfiles
@@ -170,7 +174,8 @@ custom_installation() {
     echo "6. Security Tools"
     echo "7. Data Science Tools"
     echo "8. Cloud Tools (AWS, Azure, GCP)"
-    echo "9. Dotfiles Configuration"
+    echo "9. Productivity Tools (AI CLIs, notes, todos, communication)"
+    echo "10. Dotfiles Configuration"
     echo "0. Back to main menu"
     echo "=================================="
     echo -n "Select options (comma-separated, e.g., 1,2,3): "
@@ -215,6 +220,10 @@ custom_installation() {
                 install_cloud_tools
                 ;;
             9)
+                source "$SCRIPT_DIR/scripts/install-productivity.sh"
+                install_productivity_tools
+                ;;
+            10)
                 source "$SCRIPT_DIR/scripts/configure-dotfiles.sh"
                 configure_dotfiles
                 ;;

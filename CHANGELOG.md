@@ -5,6 +5,43 @@ All notable changes to .floppies will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] - 2024-12-11
+
+### Added - Productivity & AI Tools
+- **New Productivity Module** (`scripts/install-productivity.sh`)
+  - AI CLI Tools: GitHub Copilot CLI, ChatGPT CLI, Shell-GPT (sgpt), Aider, GPT-Commit
+  - Note-Taking: Obsidian, Joplin, Standard Notes, Simplenote, jrnl, glow, pandoc, mdcat
+  - Todo Management: todo.txt-cli, Taskwarrior, Taskbook, Todoist CLI, memo, doing
+  - Communication: Slack, Telegram, Signal, Discord, Element (Matrix), Microsoft Teams
+  - Password Managers: Bitwarden (+ CLI), 1Password (+ CLI), KeePassXC, pass, gopass
+  - Terminal Image Viewers: imgcat (iTerm2), viu, chafa, timg, catimg (with sixel support)
+  - Self-Hosting Tools: Caddy, Nginx, Syncthing, Tailscale, Portainer
+  - Productivity Apps: Alfred, Raycast, Rectangle, Magnet, Toggl, Zeit CLI
+- **Comprehensive Productivity Guide** (`docs/PRODUCTIVITY_GUIDE.md`)
+  - Complete usage guide for all productivity tools
+  - Configuration examples and workflows
+  - Self-hosting recommendations
+  - Mobile support documentation
+- Productivity tools integrated into full installation
+- Productivity option (9) added to custom installation menu
+
+### Enhanced
+- Terminal emulator support (iTerm2, Warp, Alacritty, Kitty)
+- Dynamic color schemes (base16-shell, 256+ themes, random on start)
+- Apple Silicon documentation (`docs/APPLE_SILICON.md`)
+- Termux setup guide for Android (`docs/TERMUX_SETUP.md`)
+- README updated with productivity tools section
+- Installation menu now includes productivity tools
+
+### Features
+- Image preview in terminal (works with iTerm2, Kitty, Warp, and standard terminals)
+- Semi-graphics support in terminal via chafa, timg, and catimg
+- AI-powered commit messages and code assistance
+- Self-hosting infrastructure ready (Docker, Caddy, Tailscale)
+- Complete todo.txt workflow integration
+- Secure password management with multiple options
+- Cross-platform communication tools
+
 ## [1.0.0] - 2024-12-11
 
 ### Added
@@ -15,10 +52,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Development tools installation (Node.js, Python, Ruby, Go, Rust, Java)
 - Editor installation (VSCode with 25+ extensions, Vim/Neovim)
 - Terminal tools installation (tmux, screen, modern CLI tools)
+- Terminal emulators installation (iTerm2, Warp, Alacritty, Kitty)
 - Container tools installation (Docker, Kubernetes ecosystem)
 - Security tools installation (nmap, wireshark, encryption tools)
 - Data science tools installation (Jupyter, NumPy, Pandas, ML libraries)
 - Cloud tools installation (AWS CLI, Azure CLI, gcloud, Terraform)
+- Comprehensive test suite with 150+ tests
+- Test framework with 15+ assertion functions
 - Comprehensive dotfiles configuration
   - Bash and Zsh configuration
   - Git configuration with aliases
@@ -37,14 +77,40 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - README with features, installation, troubleshooting
   - Platform-specific setup guides
   - FAQ document
+  - Apple Silicon guide
+  - Termux setup guide
+  - Testing documentation
   - MIT License
 
+### GitHub Infrastructure
+- GitHub Actions workflows:
+  - Weekly dependency update checker
+  - CI/CD testing pipeline (Ubuntu & macOS)
+  - Security scanning (Gitleaks, dependency review)
+- Issue templates (bug report, feature request, documentation, question)
+- Pull request template with comprehensive checklist
+- SECURITY.md with vulnerability reporting process
+- CONTRIBUTING.md with coding standards
+- ROADMAP.md with future plans
+
+### Organization & Reusability
+- Categories system with reusable installation profiles:
+  - web-dev.list
+  - data-science.list
+  - devops.list
+  - security.list
+  - minimal.list
+- Wiki content structure ready to import
+- Architecture documentation
+
 ### Platform Support
-- macOS (Intel and Apple Silicon M1/M2/M3)
+- macOS (Intel and Apple Silicon M1/M2/M3/M4)
 - Ubuntu/Debian (apt)
 - Fedora/RHEL/CentOS (dnf/yum)
 - Arch/Manjaro (pacman)
 - Windows WSL, Git Bash, PowerShell
+- Android via Termux
+- iOS limited support via iSH
 
 ### Developer Experience
 - Interactive menu system

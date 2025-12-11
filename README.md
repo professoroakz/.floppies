@@ -98,6 +98,17 @@ That's it! The installer will guide you through the setup process.
 - Visualization: Matplotlib, Seaborn, Plotly
 - R environment
 
+### 🎯 Productivity Tools (NEW!)
+- **AI CLI Tools**: GitHub Copilot CLI, ChatGPT CLI, Shell-GPT, Aider, GPT-Commit
+- **Note-Taking**: Obsidian, Joplin, Standard Notes, Simplenote, jrnl, glow, pandoc
+- **Todo Management**: todo.txt-cli, Taskwarrior, Taskbook, Todoist CLI, memo
+- **Communication**: Slack, Telegram, Signal, Discord, Element (Matrix)
+- **Password Managers**: Bitwarden (+ CLI), 1Password (+ CLI), KeePassXC, pass, gopass
+- **Image Viewers**: imgcat, viu, chafa, timg, catimg (terminal image preview)
+- **Self-Hosting**: Docker, Caddy, Nginx, Syncthing, Tailscale, Portainer
+- **Productivity Apps**: Alfred, Raycast, Rectangle, Todoist, Notion
+- See [docs/PRODUCTIVITY_GUIDE.md](docs/PRODUCTIVITY_GUIDE.md) for complete guide
+
 ## 🌍 Platform Support
 
 .floppies works on all major platforms:
