@@ -1,0 +1,88 @@
+# Example Starship Configuration
+# Copy to ~/.config/starship.toml and customize
+
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Timeout for commands
+command_timeout = 500
+
+# Format
+format = """
+[┌─](bold green)$username$hostname$directory$git_branch$git_status
+[└─❯](bold green) """
+
+# Username
+[username]
+style_user = "bold blue"
+style_root = "bold red"
+format = "[$user]($style)@"
+disabled = false
+show_always = true
+
+# Hostname
+[hostname]
+ssh_only = false
+format = "[$hostname](bold yellow) "
+disabled = false
+
+# Directory
+[directory]
+truncation_length = 3
+truncate_to_repo = true
+format = "in [$path]($style)[$read_only]($read_only_style) "
+style = "bold cyan"
+
+# Git Branch
+[git_branch]
+symbol = "🌱 "
+format = "on [$symbol$branch]($style) "
+style = "bold purple"
+
+# Git Status
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style) )'
+style = "bold red"
+conflicted = "🏳"
+ahead = "⇡${count}"
+behind = "⇣${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+untracked = "🤷"
+stashed = "📦"
+modified = "📝"
+staged = '[++\($count\)](green)'
+renamed = "👅"
+deleted = "🗑"
+
+# Language versions
+[nodejs]
+format = "via [⬢ $version](bold green) "
+
+[python]
+format = "via [🐍 $version](bold yellow) "
+
+[rust]
+format = "via [🦀 $version](bold red) "
+
+[golang]
+format = "via [🐹 $version](bold cyan) "
+
+[ruby]
+format = "via [💎 $version](bold red) "
+
+# Docker
+[docker_context]
+format = "via [🐋 $context](bold blue) "
+
+# AWS
+[aws]
+format = 'on [$symbol($profile )(\($region\) )]($style)'
+style = "bold yellow"
+symbol = "☁️  "
+
+# Time
+[time]
+disabled = false
+format = '🕙[\[ $time \]]($style) '
+time_format = "%T"
+style = "bold white"
