@@ -1,0 +1,64 @@
+# Category: Data Science & Machine Learning
+# Description: Tools for data analysis and machine learning
+
+# Languages
+python       # Python via pyenv
+r            # R for statistical computing
+julia        # Julia (optional)
+
+# Jupyter
+jupyter      # Jupyter Notebook
+jupyterlab   # JupyterLab
+
+# Python Libraries (pip)
+pip:numpy
+pip:pandas
+pip:scipy
+pip:matplotlib
+pip:seaborn
+pip:plotly
+pip:scikit-learn
+pip:tensorflow
+pip:pytorch
+pip:keras
+pip:xgboost
+pip:lightgbm
+pip:statsmodels
+pip:sympy
+
+# Data Processing
+pip:dask
+pip:polars
+pip:pyarrow
+
+# Visualization
+pip:bokeh
+pip:altair
+pip:dash
+
+# Notebook Extensions
+pip:jupyter-contrib-nbextensions
+pip:jupyterlab-git
+pip:ipywidgets
+
+# Database Tools
+postgresql   # PostgreSQL
+mysql        # MySQL
+sqlite       # SQLite
+mongodb      # MongoDB
+
+# Big Data
+spark        # Apache Spark (optional)
+hadoop       # Hadoop (optional)
+
+# VSCode Extensions
+vscode:ms-python.python
+vscode:ms-toolsai.jupyter
+vscode:ms-toolsai.vscode-jupyter-cell-tags
+vscode:ms-toolsai.vscode-jupyter-slideshow
+
+# Development Tools
+pip:ipython
+pip:black
+pip:pylint
+pip:mypy

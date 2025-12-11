@@ -1,0 +1,83 @@
+# Category: Security & Penetration Testing
+# Description: Security tools for testing and hardening
+
+# Network Scanning
+nmap             # Network mapper
+masscan          # Fast port scanner
+zmap             # Internet scanner
+
+# Packet Analysis
+wireshark        # Network protocol analyzer
+tcpdump          # Packet sniffer
+tshark           # Wireshark CLI
+
+# Vulnerability Scanning
+nessus           # Vulnerability scanner (optional)
+openvas          # Open source vulnerability scanner (optional)
+nikto            # Web server scanner
+
+# Web Application Testing
+burpsuite        # Web security testing (optional)
+zap              # OWASP ZAP proxy
+sqlmap           # SQL injection tool
+wfuzz            # Web fuzzer
+dirb             # Web content scanner
+gobuster         # Directory/file brute forcer
+
+# Password Tools
+hashcat          # Password cracker
+john             # John the Ripper
+hydra            # Network login cracker
+medusa           # Parallel login bracker (optional)
+ophcrack         # Windows password cracker (optional)
+
+# Wireless
+aircrack-ng      # Wireless security
+kismet           # Wireless detector (optional)
+
+# Exploitation
+metasploit       # Penetration testing framework (optional)
+msfvenom         # Payload generator
+
+# Forensics
+autopsy          # Digital forensics (optional)
+foremost         # File recovery
+binwalk          # Firmware analysis
+exiftool         # Metadata reader
+
+# Cryptography
+gnupg            # GPG encryption
+openssl          # SSL/TLS toolkit
+hashid           # Hash identifier
+hash-identifier  # Identify hash types
+
+# Reverse Engineering
+ghidra           # Software reverse engineering (optional)
+radare2          # Reverse engineering framework (optional)
+gdb              # GNU debugger
+objdump          # Object file dumper
+strings          # Print strings from files
+
+# Network Tools
+netcat           # Network utility
+socat            # Socket relay
+proxychains      # Proxy tool
+tor              # Anonymity network (optional)
+
+# Information Gathering
+whois            # Domain lookup
+theharvester     # Email/domain harvester (optional)
+maltego          # OSINT tool (optional)
+recon-ng         # Reconnaissance framework (optional)
+
+# Monitoring
+snort            # IDS/IPS (optional)
+fail2ban         # Intrusion prevention
+
+# VSCode Extensions
+vscode:ms-vscode.hexeditor
+vscode:analogue.cybersecurity
+
+# Documentation
+keepassxc        # Password manager
+obsidian         # Note taking (optional)

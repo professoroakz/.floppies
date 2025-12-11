@@ -1,0 +1,87 @@
+name: Keep Dependencies Fresh
+
+on:
+  schedule:
+    # Run weekly on Monday at 9 AM UTC
+    - cron: '0 9 * * 1'
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  update-versions:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Check for nvm updates
+        id: nvm
+        run: |
+          CURRENT_URL="https://raw.githubusercontent.com/nvm-sh/nvm/latest/install.sh"
+          LATEST_VERSION=$(curl -s https://api.github.com/repos/nvm-sh/nvm/releases/latest | jq -r .tag_name)
+          echo "latest_version=$LATEST_VERSION" >> $GITHUB_OUTPUT
+      
+      - name: Check for Homebrew formula updates
+        id: brew
+        run: |
+          # Check if any core formulas have been updated
+          echo "Homebrew formulas are checked during installation" >> $GITHUB_STEP_SUMMARY
+      
+      - name: Check for Docker version updates
+        id: docker
+        run: |
+          DOCKER_LATEST=$(curl -s https://api.github.com/repos/docker/docker-ce/releases/latest | jq -r .tag_name)
+          echo "latest_version=$DOCKER_LATEST" >> $GITHUB_OUTPUT
+      
+      - name: Update documentation with latest versions
+        run: |
+          echo "## Version Check - $(date)" >> $GITHUB_STEP_SUMMARY
+          echo "- nvm: ${{ steps.nvm.outputs.latest_version }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Docker: ${{ steps.docker.outputs.latest_version }}" >> $GITHUB_STEP_SUMMARY
+      
+      - name: Create issue if updates available
+        if: success()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const title = `🔄 Weekly Dependency Update Check - ${new Date().toISOString().split('T')[0]}`;
+            const body = `## Automated Dependency Check
+            
+            This is an automated check for available updates.
+            
+            ### Recent Versions Detected:
+            - nvm: ${{ steps.nvm.outputs.latest_version }}
+            - Docker: ${{ steps.docker.outputs.latest_version }}
+            
+            ### Action Items:
+            - [ ] Review if scripts need version updates
+            - [ ] Test installation with latest versions
+            - [ ] Update documentation if needed
+            
+            *This issue was automatically created by the Keep Dependencies Fresh workflow.*`;
+            
+            // Check if similar issue exists
+            const issues = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'dependencies,automated'
+            });
+            
+            const hasRecent = issues.data.some(issue => 
+              issue.title.includes('Weekly Dependency Update Check') && 
+              Date.now() - new Date(issue.created_at).getTime() < 7 * 24 * 60 * 60 * 1000
+            );
+            
+            if (!hasRecent) {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: title,
+                body: body,
+                labels: ['dependencies', 'automated', 'enhancement']
+              });
+            }

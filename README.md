@@ -84,6 +84,18 @@ That's it! The installer will guide you through the setup process.
 - Visualization: Matplotlib, Seaborn, Plotly
 - R environment
 
+## 🗂️ Installation Profiles
+
+.floppies now supports categorized installations for specific use cases:
+
+- **web-dev** - Web development stack (Node, React, Vue, Angular, etc.)
+- **data-science** - Data science tools (Jupyter, Pandas, TensorFlow, etc.)
+- **devops** - DevOps tools (Docker, Kubernetes, Terraform, etc.)
+- **security** - Security and pentesting tools
+- **minimal** - Just the essentials
+
+See [categories/](categories/) for complete lists and custom profile creation.
+
 ## 📋 Installation Options
 
 When you run `./install.sh`, you'll see a menu:
@@ -303,11 +315,29 @@ cd .floppies
 
 ## 🤝 Contributing
 
-This is a personal development environment setup, but feel free to fork and customize for your needs!
+Contributions are welcome! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
+
+## 📚 Documentation
+
+- **[README.md](README.md)** - Main documentation (you are here)
+- **[FAQ](docs/FAQ.md)** - Frequently asked questions
+- **[Platform Setup](docs/PLATFORM_SETUP.md)** - OS-specific guides
+- **[Quick Reference](QUICKREF.md)** - Command cheatsheet
+- **[CHANGELOG](CHANGELOG.md)** - Version history
+- **[ROADMAP](ROADMAP.md)** - Future plans
+- **[Wiki](wiki/)** - Detailed guides (import to GitHub Wiki)
+- **[Categories](categories/)** - Installation profiles
+
+## 🔒 Security
+
+Security is important! See [SECURITY.md](SECURITY.md) for:
+- Reporting vulnerabilities
+- Security best practices
+- Known security considerations
 
 ## 📝 License
 
-MIT License - feel free to use and modify as needed.
+MIT License - feel free to use and modify as needed. See [LICENSE](LICENSE) for details.
 
 ## 🎯 Philosophy
 
@@ -324,6 +354,21 @@ Based on analysis of these repositories:
 - [dotfiles](https://github.com/professoroakz/dotfiles)
 - [.baesreps](https://github.com/professoroakz/.baesreps)
 - [.stripes](https://github.com/professoroakz/.stripes)
+
+## 🔧 Maintenance & Updates
+
+.floppies includes GitHub Actions to help keep everything fresh:
+
+- **🔄 Weekly Dependency Checks** - Automated version checking
+- **✅ CI/CD Testing** - Continuous integration on multiple platforms
+- **🔒 Security Scanning** - Automated security audits
+- **📝 Issue Templates** - Structured bug reports and feature requests
+
+## 📊 Project Status
+
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/professoroakz/.floppies/test.yml)
+![GitHub issues](https://img.shields.io/github/issues/professoroakz/.floppies)
+![GitHub](https://img.shields.io/github/license/professoroakz/.floppies)
 
 ---
 

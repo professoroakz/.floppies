@@ -1,0 +1,63 @@
+name: ❓ Question/Support
+description: Ask a question or get help with .floppies
+title: "[Question]: "
+labels: ["question", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Have a question? We're here to help!
+        
+        **Before submitting:**
+        - Check the [FAQ](https://github.com/professoroakz/.floppies/blob/main/docs/FAQ.md)
+        - Review the [Platform Setup Guide](https://github.com/professoroakz/.floppies/blob/main/docs/PLATFORM_SETUP.md)
+        - Search existing issues
+  
+  - type: textarea
+    id: question
+    attributes:
+      label: Question
+      description: What would you like to know?
+      placeholder: Your question here...
+    validations:
+      required: true
+  
+  - type: dropdown
+    id: category
+    attributes:
+      label: Question Category
+      description: What is your question about?
+      options:
+        - Installation
+        - Configuration
+        - Troubleshooting
+        - Platform-specific
+        - Tool-specific
+        - Best Practices
+        - Other
+    validations:
+      required: true
+  
+  - type: input
+    id: os
+    attributes:
+      label: Operating System (if relevant)
+      description: What OS are you using?
+      placeholder: "e.g., macOS 14.1, Ubuntu 22.04"
+  
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional Context
+      description: Any additional information that might help us answer your question
+      placeholder: Additional details...
+  
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Pre-submission Checklist
+      options:
+        - label: I have checked the FAQ
+          required: true
+        - label: I have searched existing issues
+          required: true
