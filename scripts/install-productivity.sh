@@ -126,8 +126,14 @@ install_note_taking_tools() {
             brew install vimwiki || true
             ;;
         ubuntu|debian)
-            # Joplin AppImage
-            wget -O /tmp/Joplin.AppImage https://github.com/laurent22/joplin/releases/latest/download/Joplin-*.AppImage 2>/dev/null || true
+            # Joplin AppImage - get latest version
+            if ! command -v joplin &> /dev/null; then
+                log_info "Installing Joplin AppImage..."
+                JOPLIN_URL=$(curl -s https://api.github.com/repos/laurent22/joplin/releases/latest | grep "browser_download_url.*AppImage" | cut -d '"' -f 4 | head -n 1)
+                if [ -n "$JOPLIN_URL" ]; then
+                    wget -O /tmp/Joplin.AppImage "$JOPLIN_URL" 2>/dev/null && chmod +x /tmp/Joplin.AppImage || true
+                fi
+            fi
             
             # Markdown tools
             sudo apt-get install -y pandoc
@@ -358,10 +364,13 @@ install_password_managers() {
             # pass
             sudo apt-get install -y pass
             
-            # gopass
+            # gopass - get latest version
             if ! command -v gopass &> /dev/null; then
-                wget -O /tmp/gopass.deb https://github.com/gopasspw/gopass/releases/latest/download/gopass_*_linux_amd64.deb 2>/dev/null || true
-                sudo dpkg -i /tmp/gopass.deb 2>/dev/null || true
+                log_info "Installing gopass..."
+                GOPASS_URL=$(curl -s https://api.github.com/repos/gopasspw/gopass/releases/latest | grep "browser_download_url.*_linux_amd64.deb" | cut -d '"' -f 4)
+                if [ -n "$GOPASS_URL" ]; then
+                    wget -O /tmp/gopass.deb "$GOPASS_URL" 2>/dev/null && sudo dpkg -i /tmp/gopass.deb 2>/dev/null || true
+                fi
             fi
             ;;
         fedora|rhel|centos)
@@ -512,7 +521,7 @@ install_self_hosting_tools() {
             esac
             
             # Coolify (self-hosting platform) - Docker-based
-            log_info "To install Coolify: curl -fsSL https://get.coollabs.io/coolify/install.sh | bash"
+            log_info "To install Coolify: Download and verify the script first: curl -fsSL https://get.coollabs.io/coolify/install.sh -o /tmp/coolify-install.sh && bash /tmp/coolify-install.sh"
             
             # Syncthing (file sync)
             case "$OS" in
@@ -538,10 +547,20 @@ install_self_hosting_tools() {
                     brew install --cask tailscale
                     ;;
                 ubuntu|debian)
-                    curl -fsSL https://tailscale.com/install.sh | sh
+                    # Download and verify Tailscale install script
+                    if ! command -v tailscale &> /dev/null; then
+                        log_info "Installing Tailscale..."
+                        curl -fsSL https://tailscale.com/install.sh -o /tmp/tailscale-install.sh
+                        sudo sh /tmp/tailscale-install.sh
+                    fi
                     ;;
                 fedora|rhel|centos|arch|manjaro)
-                    curl -fsSL https://tailscale.com/install.sh | sh
+                    # Download and verify Tailscale install script
+                    if ! command -v tailscale &> /dev/null; then
+                        log_info "Installing Tailscale..."
+                        curl -fsSL https://tailscale.com/install.sh -o /tmp/tailscale-install.sh
+                        sudo sh /tmp/tailscale-install.sh
+                    fi
                     ;;
             esac
             ;;
