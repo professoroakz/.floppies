@@ -81,10 +81,20 @@ install_fonts_linux() {
     for font in "${nerd_fonts[@]}"; do
         log_info "Downloading $font Nerd Font..."
         local url="https://github.com/ryanoasis/nerd-fonts/releases/latest/download/${font}.zip"
+        local zip_file="$temp_dir/${font}.zip"
         
-        if curl -fsSL "$url" -o "$temp_dir/${font}.zip" 2>/dev/null; then
-            unzip -q "$temp_dir/${font}.zip" -d "$fonts_dir/${font}" 2>/dev/null || true
-            rm "$temp_dir/${font}.zip"
+        if curl -fsSL "$url" -o "$zip_file" 2>/dev/null; then
+            # Validate zip file
+            if unzip -t "$zip_file" &>/dev/null; then
+                if unzip -q "$zip_file" -d "$fonts_dir/${font}" 2>/dev/null; then
+                    log_success "Installed $font"
+                else
+                    log_warn "Failed to extract $font"
+                fi
+            else
+                log_warn "Downloaded $font.zip is corrupted"
+            fi
+            rm -f "$zip_file"
         else
             log_warn "Failed to download $font"
         fi
@@ -98,6 +108,29 @@ install_fonts_linux() {
 
 # Run if executed directly
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
-    source "$(dirname "$0")/../install.sh" --source-only
+    # Source only the logging functions from install.sh
+    SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+    
+    # Define logging functions if not already defined
+    if ! command -v log_info &>/dev/null; then
+        RED='\033[0;31m'
+        GREEN='\033[0;32m'
+        YELLOW='\033[1;33m'
+        BLUE='\033[0;34m'
+        NC='\033[0m'
+        
+        log_info() { echo -e "${BLUE}[INFO]${NC} $1"; }
+        log_success() { echo -e "${GREEN}[SUCCESS]${NC} $1"; }
+        log_warn() { echo -e "${YELLOW}[WARNING]${NC} $1"; }
+        log_error() { echo -e "${RED}[ERROR]${NC} $1"; }
+    fi
+    
+    # Detect OS
+    if [[ "$OSTYPE" == "darwin"* ]]; then
+        OS="macos"
+    else
+        OS="linux"
+    fi
+    
     install_fonts
 fi

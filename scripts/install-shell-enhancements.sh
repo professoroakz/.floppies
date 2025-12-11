@@ -75,7 +75,23 @@ install_z() {
     fi
     
     log_info "Installing z..."
-    curl -fsSL https://raw.githubusercontent.com/rupa/z/master/z.sh -o ~/.z.sh
+    local temp_file="/tmp/z.sh.$$"
+    
+    if curl -fsSL https://raw.githubusercontent.com/rupa/z/master/z.sh -o "$temp_file"; then
+        # Basic validation - check if file is not empty and contains expected content
+        if [ -s "$temp_file" ] && grep -q "# z.sh" "$temp_file" 2>/dev/null; then
+            mv "$temp_file" ~/.z.sh
+            log_success "z installed successfully"
+        else
+            log_error "Downloaded z.sh appears invalid"
+            rm -f "$temp_file"
+            return 1
+        fi
+    else
+        log_error "Failed to download z.sh"
+        rm -f "$temp_file"
+        return 1
+    fi
 }
 
 install_direnv() {
@@ -150,6 +166,26 @@ install_tldr() {
 
 # Run if executed directly
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
-    source "$(dirname "$0")/../install.sh" --source-only
+    # Define logging functions if not already defined
+    if ! command -v log_info &>/dev/null; then
+        RED='\033[0;31m'
+        GREEN='\033[0;32m'
+        YELLOW='\033[1;33m'
+        BLUE='\033[0;34m'
+        NC='\033[0m'
+        
+        log_info() { echo -e "${BLUE}[INFO]${NC} $1"; }
+        log_success() { echo -e "${GREEN}[SUCCESS]${NC} $1"; }
+        log_warn() { echo -e "${YELLOW}[WARNING]${NC} $1"; }
+        log_error() { echo -e "${RED}[ERROR]${NC} $1"; }
+    fi
+    
+    # Detect OS
+    if [[ "$OSTYPE" == "darwin"* ]]; then
+        OS="macos"
+    else
+        OS="linux"
+    fi
+    
     install_shell_enhancements
 fi
