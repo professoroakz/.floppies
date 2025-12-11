@@ -175,7 +175,9 @@ custom_installation() {
     echo "7. Data Science Tools"
     echo "8. Cloud Tools (AWS, Azure, GCP)"
     echo "9. Productivity Tools (AI CLIs, notes, todos, communication)"
-    echo "10. Dotfiles Configuration"
+    echo "10. Programming Fonts (Fira Code, JetBrains Mono, Nerd Fonts)"
+    echo "11. Shell Enhancements (thefuck, autojump, direnv, mosh)"
+    echo "12. Dotfiles Configuration"
     echo "0. Back to main menu"
     echo "=================================="
     echo -n "Select options (comma-separated, e.g., 1,2,3): "
@@ -224,6 +226,14 @@ custom_installation() {
                 install_productivity_tools
                 ;;
             10)
+                source "$SCRIPT_DIR/scripts/install-fonts.sh"
+                install_fonts
+                ;;
+            11)
+                source "$SCRIPT_DIR/scripts/install-shell-enhancements.sh"
+                install_shell_enhancements
+                ;;
+            12)
                 source "$SCRIPT_DIR/scripts/configure-dotfiles.sh"
                 configure_dotfiles
                 ;;

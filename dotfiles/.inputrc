@@ -1,0 +1,41 @@
+# ~/.inputrc - Readline configuration
+# Better bash/readline navigation
+
+# Use case-insensitive tab completion
+set completion-ignore-case on
+
+# Treat hyphens and underscores as equivalent for completion
+set completion-map-case on
+
+# Display all possible matches after one tab press
+set show-all-if-ambiguous on
+
+# Perform completion immediately on tab if prefix is unique
+set show-all-if-unmodified on
+
+# Append slash to completed directory symlinks
+set mark-symlinked-directories on
+
+# Enable color for file type in tab completion
+set colored-stats on
+
+# Show file type indicators like ls -F
+set visible-stats on
+
+# Be more intelligent when autocompleting by also looking at text after cursor
+set skip-completed-text on
+
+# Immediately add a trailing slash when autocompleting symlinks to directories
+set mark-symlinked-directories on
+
+# Use up and down arrows for prefix history search
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+
+# Use Ctrl-Left/Right to move between words
+"\e[1;5D": backward-word
+"\e[1;5C": forward-word
+
+# Use Alt-Left/Right for moving between words (Mac compatibility)
+"\e\e[D": backward-word
+"\e\e[C": forward-word

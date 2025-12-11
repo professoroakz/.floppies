@@ -109,6 +109,37 @@ That's it! The installer will guide you through the setup process.
 - **Productivity Apps**: Alfred, Raycast, Rectangle, Todoist, Notion
 - See [docs/PRODUCTIVITY_GUIDE.md](docs/PRODUCTIVITY_GUIDE.md) for complete guide
 
+### 🔤 Programming Fonts (NEW!)
+- **Fira Code** - Popular with ligatures
+- **JetBrains Mono** - Excellent for coding, designed by JetBrains
+- **Cascadia Code** - Microsoft's modern programming font
+- **Hack** - Clean and highly readable
+- **Source Code Pro** - Adobe's professional programming font
+- **Meslo** - Customized for Powerline/Powerline symbols
+- **Nerd Fonts** - All fonts patched with icons and glyphs for terminal
+- Automatic installation on macOS and Linux
+- Pre-configured for iTerm2, VSCode, and terminal emulators
+
+### 🚀 Shell Enhancements (NEW!)
+- **thefuck** - Corrects your previous console command with AI
+- **autojump** / **z** - Smart directory navigation (cd on steroids)
+- **direnv** - Load/unload environment variables per directory
+- **mosh** - Mobile shell for better SSH over unstable connections
+- **ncdu** - NCurses disk usage analyzer
+- **tldr** - Simplified, community-driven man pages
+- **fzf** - Fuzzy finder for files, history, processes (already included)
+- All integrated into your shell with smart defaults
+
+### 📄 Enhanced Dotfiles (NEW!)
+- **`.editorconfig`** - Consistent coding styles across all editors
+- **`.inputrc`** - Better readline navigation and completion
+- **`.curlrc`** - Curl with sane defaults and user agent
+- **`.wgetrc`** - Wget with retry logic and progress bars
+- **`.screenrc`** - GNU Screen with 256 colors and mouse support
+- **`.bash_aliases`** - Extensive aliases for git, docker, kubernetes
+- **Hundreds of custom functions** - mkcd, extract, gcl, backup, findreplace
+- See [docs/DOTFILES_GUIDE.md](docs/DOTFILES_GUIDE.md) for complete guide
+
 ## 🌍 Platform Support
 
 .floppies works on all major platforms:
@@ -174,10 +205,14 @@ When you run `./install.sh`, you'll see a menu:
      - Development Tools
      - Editors (VSCode, Vim)
      - Terminal Tools
+     - Terminal Emulators (iTerm2, Warp, color schemes)
      - Container Tools
      - Security Tools
      - Data Science Tools
      - Cloud Tools
+     - Productivity Tools (AI, notes, todos, communication)
+     - Programming Fonts (Fira Code, JetBrains Mono, Nerd Fonts)
+     - Shell Enhancements (thefuck, autojump, direnv, mosh)
      - Dotfiles Configuration
 
 4. **Update Existing Installation**

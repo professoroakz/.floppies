@@ -5,6 +5,51 @@ All notable changes to .floppies will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0] - 2024-12-11
+
+### Added - Awesome Dotfiles Features
+- **Programming Fonts Module** (`scripts/install-fonts.sh`)
+  - Fira Code, JetBrains Mono, Cascadia Code, Hack, Source Code Pro
+  - All fonts with Nerd Font patches (icons and glyphs)
+  - Meslo LG Nerd Font for Powerline compatibility
+  - Automatic installation on macOS (via Homebrew Cask Fonts)
+  - Automatic installation on Linux (downloads from Nerd Fonts releases)
+  - Font cache refresh after installation
+- **Shell Enhancements Module** (`scripts/install-shell-enhancements.sh`)
+  - thefuck - AI-powered command corrector
+  - autojump - Smart directory navigation
+  - z - Frecent directory jumper
+  - direnv - Directory-specific environment variables
+  - mosh - Mobile shell for better SSH
+  - ncdu - NCurses disk usage analyzer
+  - tldr - Simplified man pages
+- **Enhanced Dotfiles**
+  - `.editorconfig` - Consistent coding styles (VSCode, Vim, IntelliJ, etc.)
+  - `.inputrc` - Better readline navigation and completion
+  - `.curlrc` - Curl with sane defaults
+  - `.wgetrc` - Wget with retry logic and progress bars
+  - `.screenrc` - GNU Screen with 256 colors and mouse support
+- **Comprehensive Dotfiles Guide** (`docs/DOTFILES_GUIDE.md`)
+  - Complete guide to all dotfiles and configurations
+  - Shell enhancement usage examples
+  - Font configuration for different terminals
+  - Color scheme management with base16-shell
+  - Advanced SSH config examples
+  - Custom function library
+  - Synchronization strategies (git, Syncthing)
+  - Troubleshooting section
+
+### Enhanced
+- Custom installation menu now has 12 options (added fonts and shell enhancements)
+- `configure_dotfiles()` now copies all additional dotfiles automatically
+- README updated with Programming Fonts, Shell Enhancements, and Enhanced Dotfiles sections
+- Better integration with awesome-dotfiles ecosystem
+
+### Documentation
+- Added DOTFILES_GUIDE.md with comprehensive dotfiles documentation
+- Enhanced README with new features
+- Updated installation instructions for new modules
+
 ## [1.1.0] - 2024-12-11
 
 ### Added - Productivity & AI Tools

@@ -27,7 +27,36 @@ configure_dotfiles() {
     # Configure VSCode
     configure_vscode_settings
     
+    # Copy additional dotfiles
+    copy_additional_dotfiles
+    
     log_success "Dotfiles configured!"
+}
+
+copy_additional_dotfiles() {
+    log_info "Copying additional configuration files..."
+    
+    # Copy dotfiles that don't need modification
+    local dotfiles=(
+        ".editorconfig"
+        ".inputrc"
+        ".curlrc"
+        ".wgetrc"
+        ".screenrc"
+    )
+    
+    for dotfile in "${dotfiles[@]}"; do
+        if [ -f "$DOTFILES_DIR/$dotfile" ]; then
+            cp "$DOTFILES_DIR/$dotfile" "$HOME/"
+            log_info "Copied $dotfile"
+        fi
+    done
+    
+    # Copy bash_aliases example if it doesn't exist
+    if [ ! -f "$HOME/.bash_aliases" ] && [ -f "$DOTFILES_DIR/bash_aliases.example" ]; then
+        cp "$DOTFILES_DIR/bash_aliases.example" "$HOME/.bash_aliases"
+        log_info "Created .bash_aliases from example"
+    fi
 }
 
 backup_dotfiles() {
