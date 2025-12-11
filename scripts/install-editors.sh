@@ -117,7 +117,7 @@ install_vscode_extensions() {
             log_info "Extension $extension already installed"
         else
             log_info "Installing extension: $extension"
-            code --install-extension "$extension" --force || log_warning "Failed to install $extension"
+            code --install-extension "$extension" || log_warning "Failed to install $extension"
         fi
     done
     

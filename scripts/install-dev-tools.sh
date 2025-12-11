@@ -46,7 +46,7 @@ install_dev_tools_macos() {
     
     # Programming languages and tools
     brew install node
-    brew install python@3.11
+    brew install python@3.12
     brew install ruby
     brew install go
     brew install rust
@@ -183,7 +183,7 @@ install_nodejs() {
     # Install nvm (Node Version Manager) if not present
     if [ ! -d "$HOME/.nvm" ]; then
         log_info "Installing nvm..."
-        curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+        curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/latest/install.sh | bash
         
         export NVM_DIR="$HOME/.nvm"
         [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"

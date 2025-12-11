@@ -76,7 +76,12 @@ test_command git "Git"
 test_command curl "cURL"
 test_command wget "wget"
 test_command ssh "SSH"
-test_command gpg "GnuPG" || test_command gpg2 "GnuPG"
+if ! test_command gpg "GnuPG"; then
+    if test_command gpg2 "GnuPG2"; then
+        ((PASS_COUNT++))
+        ((FAIL_COUNT--))
+    fi
+fi
 echo ""
 
 echo "Testing Development Languages..."
