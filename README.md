@@ -2,6 +2,8 @@
 
 **The Universal Development Environment Setup**
 
+Max Opt Productivity @dev computer(s).
+
 One script to install them all! A comprehensive, cross-platform development environment setup tool that works on macOS, Linux (Ubuntu/Debian/RHEL/Arch), Windows (WSL/Git Bash), and more.
 
 ## 🚀 Quick Start
@@ -337,7 +339,33 @@ Security is important! See [SECURITY.md](SECURITY.md) for:
 
 ## 📝 License
 
-MIT License - feel free to use and modify as needed. See [LICENSE](LICENSE) for details.
+. The legal mechanism: permissive open-source licenses
+
+For example, Apple can take FreeBSD, OpenBSD, LLVM, libdispatch, XNU components, etc., and integrate them into macOS/iOS because these projects use permissive licenses, mainly:
+
+BSD-2-Clause
+
+BSD-3-Clause
+
+MIT
+
+Apache 2.0
+
+LLVM License (Apache 2.0 + exception)
+
+These licenses allow the following, explicitly:
+
+Action	Permitted?
+Use the code commercially	Yes
+Modify the code	Yes
+Re-distribute binaries only (closed source)	Yes
+Not publish your own changes	Yes
+Sell products built on the code	Yes
+Pay zero royalties	Yes
+There is no copyleft clause (unlike GPL).
+
+MIT License - feel free to use and modify as needed.
+Partly open, also abit closed. See [LICENSE](LICENSE) for details.
 
 ## 🎯 Philosophy
 
@@ -373,3 +401,6 @@ Based on analysis of these repositories:
 ---
 
 Made with ❤️ for developers who want to get up and running fast on any machine.
+
+# .floppies
+.floppies -- .env .dotfiles etc for windows macos unix linux whatever
