@@ -1,2 +1,2 @@
 # .floppies
-.env for windows macos unix linux 
+.floppies -- .env .dotfiles etc for windows macos unix linux whatever
