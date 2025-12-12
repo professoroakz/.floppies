@@ -140,6 +140,50 @@ That's it! The installer will guide you through the setup process.
 - **Hundreds of custom functions** - mkcd, extract, gcl, backup, findreplace
 - See [docs/DOTFILES_GUIDE.md](docs/DOTFILES_GUIDE.md) for complete guide
 
+### ⭐ Community Favorites (NEW!)
+**30+ essential tools from Reddit (r/commandline, r/terminal), YouTube reviews, and awesome lists**
+
+- **File Managers**: 
+  - `lazygit` - Simple terminal UI for git (42k+ ⭐)
+  - `lf` - Blazing fast file manager (ranger successor)
+  - `ranger` - Feature-rich with image preview
+  - `nnn` - Fastest file manager
+  - `broot` - Tree view with fuzzy search
+
+- **System Monitors**:
+  - `btop++` - Beautiful modern resource monitor
+  - `glances` - Cross-platform monitoring with web UI
+  - `procs` - Modern ps replacement
+  - `duf` - Modern df replacement
+  - `dust` - Modern du replacement
+
+- **Git Tools**:
+  - `lazygit` - Terminal UI for git
+  - `tig` - Text-mode git interface
+  - `gh` - GitHub CLI
+  - `delta` - Syntax-highlighting pager (20k+ ⭐)
+
+- **Text & Processing**:
+  - `sd` - Modern sed replacement
+  - `choose` - Human-friendly cut/awk
+  - `difftastic` - Semantic diff tool
+  - `eza` - Modern ls replacement
+
+- **Network Tools**:
+  - `gping` - Ping with graphs
+  - `bandwhich` - Bandwidth monitor by process
+  - `dog` - Modern dig replacement
+
+- **Essential Utils**:
+  - `zoxide` - Smarter cd (17k+ ⭐, 10-15x faster)
+  - `hyperfine` - Command benchmarking
+  - `tokei` - Code statistics
+  - `mcfly` - Smart history search (neural network)
+  - `atuin` - Magical shell history with sync
+  - `ouch` - All-in-one archive tool
+
+- See [docs/COMMUNITY_FAVORITES.md](docs/COMMUNITY_FAVORITES.md) for complete guide
+
 ## 🌍 Platform Support
 
 .floppies works on all major platforms:
@@ -213,6 +257,7 @@ When you run `./install.sh`, you'll see a menu:
      - Productivity Tools (AI, notes, todos, communication)
      - Programming Fonts (Fira Code, JetBrains Mono, Nerd Fonts)
      - Shell Enhancements (thefuck, autojump, direnv, mosh)
+     - **Community Favorites** (lazygit, btop++, zoxide, eza, atuin, 25+ more) ⭐
      - Dotfiles Configuration
 
 4. **Update Existing Installation**

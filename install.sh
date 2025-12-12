@@ -152,6 +152,10 @@ install_full() {
     source "$SCRIPT_DIR/scripts/install-productivity.sh"
     install_productivity_tools
     
+    # Install community favorites
+    source "$SCRIPT_DIR/scripts/install-community-favorites.sh"
+    install_community_favorites
+    
     # Configure dotfiles
     source "$SCRIPT_DIR/scripts/configure-dotfiles.sh"
     configure_dotfiles
@@ -177,7 +181,8 @@ custom_installation() {
     echo "9. Productivity Tools (AI CLIs, notes, todos, communication)"
     echo "10. Programming Fonts (Fira Code, JetBrains Mono, Nerd Fonts)"
     echo "11. Shell Enhancements (thefuck, autojump, direnv, mosh)"
-    echo "12. Dotfiles Configuration"
+    echo "12. Community Favorites (lazygit, btop++, ranger, lf, eza, zoxide)"
+    echo "13. Dotfiles Configuration"
     echo "0. Back to main menu"
     echo "=================================="
     echo -n "Select options (comma-separated, e.g., 1,2,3): "
@@ -234,6 +239,10 @@ custom_installation() {
                 install_shell_enhancements
                 ;;
             12)
+                source "$SCRIPT_DIR/scripts/install-community-favorites.sh"
+                install_community_favorites
+                ;;
+            13)
                 source "$SCRIPT_DIR/scripts/configure-dotfiles.sh"
                 configure_dotfiles
                 ;;

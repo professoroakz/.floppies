@@ -5,6 +5,79 @@ All notable changes to .floppies will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.0] - 2024-12-12
+
+### Added - Community Favorites
+- **Community Favorites Module** (`scripts/install-community-favorites.sh`)
+  - Based on Reddit (r/commandline, r/terminal, r/unixporn), YouTube reviews, and awesome lists
+  - 30+ essential tools that power users can't live without
+  
+- **File Managers:**
+  - lf - Blazing fast terminal file manager (ranger successor)
+  - ranger - Feature-rich file manager with image preview
+  - nnn - Fastest file manager with minimal footprint
+  - broot - Tree view with fuzzy search
+  
+- **System Monitors:**
+  - btop++ - Beautiful modern resource monitor (htop replacement)
+  - glances - Cross-platform monitoring with web UI
+  - procs - Modern ps replacement with colors and search
+  - duf - Modern df replacement with easy-to-read output
+  - dust - Modern du replacement with visual tree (du + rust)
+  
+- **Git Enhancements:**
+  - lazygit - Simple terminal UI for git (42k+ GitHub stars)
+  - tig - Text-mode interface for git
+  - gh - GitHub CLI
+  - delta - Syntax-highlighting pager for git (20k+ stars)
+  
+- **Text Processing:**
+  - sd - Modern sed replacement
+  - choose - Human-friendly cut/awk alternative
+  - difftastic - Semantic diff tool
+  - eza - Modern ls replacement (exa successor)
+  
+- **Network Tools:**
+  - gping - Ping with graphs
+  - bandwhich - Network bandwidth monitor by process
+  - dog - Modern dig replacement
+  
+- **Archive Tools:**
+  - ouch - All-in-one compression/decompression tool
+  - Standard tools: xz, p7zip, unrar
+  
+- **Essential Utilities:**
+  - zoxide - Smarter cd command (17k+ stars, 10-15x faster than autojump)
+  - hyperfine - Command-line benchmarking tool
+  - tokei - Fast code statistics tool
+  - tealdeer - Rust implementation of tldr
+  - mcfly - Smart command history search (neural network powered)
+  - atuin - Magical shell history with sync across machines
+  
+- **Comprehensive Documentation** (`docs/COMMUNITY_FAVORITES.md`)
+  - Complete guide to all community favorite tools
+  - Usage examples for every tool
+  - Why these tools (Reddit insights, YouTube recommendations, awesome lists analysis)
+  - Performance comparisons
+  - Common workflows (Modern, Minimalist, Power User setups)
+  - Configuration examples
+  - Recommended aliases
+  - Shell integration
+  - Troubleshooting section
+
+### Enhanced
+- Custom installation menu now has 13 options (added Community Favorites)
+- Full installation now includes community favorites by default
+- README updated with Community Favorites section
+- Better Rust/Cargo integration for modern CLI tools
+
+### Documentation
+- Added COMMUNITY_FAVORITES.md with 15,000+ words of comprehensive documentation
+- Includes insights from Reddit communities (r/commandline, r/terminal, r/unixporn)
+- YouTube recommendations from popular tech YouTubers (ThePrimeagen, Dreams of Code, typecraft)
+- Analysis of awesome-cli most starred projects
+- Performance benchmarks from community testing
+
 ## [1.2.0] - 2024-12-11
 
 ### Added - Awesome Dotfiles Features
