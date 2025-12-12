@@ -1,0 +1,49 @@
+# Category: Minimal Essentials
+# Description: Bare minimum for basic development
+
+# Version Control
+git              # Git
+gh               # GitHub CLI
+
+# Text Editors
+vim              # Vim text editor
+nano             # Simple text editor
+
+# Shell
+bash             # Bash shell
+zsh              # Zsh shell (optional)
+
+# Build Essentials
+make             # GNU Make
+gcc              # GNU C Compiler
+build-essential  # Build tools (Linux)
+
+# Core Utilities
+curl             # Transfer data
+wget             # Download files
+ssh              # Secure shell
+tar              # Archive utility
+zip              # Compression
+unzip            # Decompression
+
+# Language Runtime (choose one)
+node             # Node.js OR
+python           # Python OR
+ruby             # Ruby
+
+# Package Manager (matching language)
+npm              # For Node.js OR
+pip              # For Python OR
+gem              # For Ruby
+
+# Encryption
+gnupg            # GPG encryption
+
+# Modern CLI Tools (optional but recommended)
+ripgrep          # Better grep
+fd               # Better find
+bat              # Better cat
+
+# Terminal Multiplexer (optional)
+tmux             # Terminal multiplexer OR
+screen           # Screen multiplexer

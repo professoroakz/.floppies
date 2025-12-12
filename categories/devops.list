@@ -1,0 +1,80 @@
+# Category: DevOps & Infrastructure
+# Description: Tools for DevOps, CI/CD, and infrastructure management
+
+# Container Tools
+docker            # Docker Engine
+docker-compose    # Docker Compose
+podman           # Alternative to Docker (optional)
+
+# Kubernetes
+kubectl          # Kubernetes CLI
+helm             # Kubernetes package manager
+k9s              # Kubernetes CLI UI
+minikube         # Local Kubernetes
+kind             # Kubernetes in Docker (optional)
+kubectx          # Context switching
+stern            # Multi-pod log tailing
+
+# Cloud CLIs
+aws-cli          # AWS CLI
+azure-cli        # Azure CLI
+gcloud           # Google Cloud SDK
+doctl            # DigitalOcean CLI
+linode-cli       # Linode CLI (optional)
+
+# Infrastructure as Code
+terraform        # Terraform
+terragrunt       # Terraform wrapper
+ansible          # Configuration management
+packer           # Image builder
+vagrant          # VM management (optional)
+
+# CI/CD
+gh               # GitHub CLI
+gitlab-runner    # GitLab Runner (optional)
+jenkins-cli      # Jenkins CLI (optional)
+circleci         # CircleCI CLI (optional)
+
+# Monitoring & Logging
+prometheus       # Monitoring (optional)
+grafana          # Visualization (optional)
+datadog-agent    # Datadog (optional)
+
+# Service Mesh
+istioctl         # Istio CLI (optional)
+linkerd          # Linkerd CLI (optional)
+
+# Configuration Management
+consul           # Consul (optional)
+vault            # HashiCorp Vault (optional)
+
+# Build Tools
+make             # GNU Make
+cmake            # CMake
+ninja            # Ninja build system
+
+# Scripting
+python           # Python
+ruby             # Ruby
+go               # Go
+
+# Network Tools
+curl             # Transfer data
+wget             # Download files
+httpie           # HTTP client
+netcat           # Network utility
+socat            # Socket relay
+tcpdump          # Packet analyzer
+nmap             # Network scanner
+dig              # DNS lookup
+
+# Version Control
+git              # Git
+git-lfs          # Git LFS
+
+# VSCode Extensions
+vscode:ms-azuretools.vscode-docker
+vscode:ms-kubernetes-tools.vscode-kubernetes-tools
+vscode:hashicorp.terraform
+vscode:redhat.vscode-yaml
+vscode:redhat.ansible

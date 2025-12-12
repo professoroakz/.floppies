@@ -1,0 +1,74 @@
+# Category: Web Development
+# Description: Complete web development stack
+
+# Languages & Runtimes
+node         # Node.js via nvm
+python       # Python via pyenv
+ruby         # Ruby for Jekyll and Rails
+
+# Package Managers
+npm          # Node package manager
+yarn         # Alternative to npm
+pnpm         # Fast, disk space efficient package manager
+
+# Build Tools
+webpack      # Module bundler
+vite         # Next generation frontend tooling
+esbuild      # Extremely fast JavaScript bundler
+
+# Frameworks & Libraries (Global)
+npm:@vue/cli
+npm:@angular/cli
+npm:create-react-app
+npm:next
+npm:gatsby-cli
+npm:@nestjs/cli
+npm:express-generator
+
+# Testing
+npm:jest
+npm:cypress
+npm:playwright
+npm:vitest
+
+# Linting & Formatting
+npm:eslint
+npm:prettier
+npm:stylelint
+
+# TypeScript
+npm:typescript
+npm:ts-node
+npm:@types/node
+
+# CSS Tools
+npm:sass
+npm:postcss
+npm:tailwindcss
+npm:autoprefixer
+
+# Development Servers
+npm:http-server
+npm:live-server
+npm:webpack-dev-server
+
+# VSCode Extensions
+vscode:esbenp.prettier-vscode
+vscode:dbaeumer.vscode-eslint
+vscode:bradlc.vscode-tailwindcss
+vscode:dsznajder.es7-react-js-snippets
+vscode:formulahendry.auto-rename-tag
+vscode:christian-kohler.path-intellisense
+vscode:zignd.html-css-class-completion
+
+# Browser Tools
+chrome-devtools  # Chrome DevTools
+firefox-devtools # Firefox Developer Edition
+
+# API Development
+httpie          # HTTP client
+postman         # API platform (optional GUI)
+
+# Version Control
+git-lfs         # Git Large File Storage
+gh              # GitHub CLI

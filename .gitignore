@@ -1,0 +1,29 @@
+# OS specific
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Temporary files
+*.swp
+*.swo
+*~
+.tmp
+*.log
+
+# Backup files
+*.backup
+*.bak
+.dotfiles_backup_*
+
+# IDE
+.vscode/
+.idea/
+*.iml
+
+# Local configuration
+config/local.sh
+.env.local
