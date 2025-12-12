@@ -184,6 +184,35 @@ That's it! The installer will guide you through the setup process.
 
 - See [docs/COMMUNITY_FAVORITES.md](docs/COMMUNITY_FAVORITES.md) for complete guide
 
+### 📱 macOS Shortcuts Integration (NEW!)
+**Automate terminal workflows with 10 pre-built helper scripts**
+
+- **Git & Development**:
+  - Quick git commit with AI-generated messages (⌘⇧G)
+  - Open project in VSCode + Terminal (⌘⇧O)
+  - AI command helper using Shell-GPT (⌘⇧A)
+
+- **System Management**:
+  - System info quick view (⌘⇧I)
+  - Docker quick manager (⌘⇧D)
+  - Network speed test (⌘⇧N)
+  - Screenshot organizer (⌘⇧S)
+
+- **Productivity**:
+  - Todo quick add (⌘⇧T)
+  - Coffee break timer / Pomodoro (⌘⇧B)
+  - Clipboard manager with history (⌘⇧C)
+
+- **Integration**:
+  - Works with Shortcuts.app, Alfred, Raycast, BetterTouchTool, Hammerspoon
+  - Global keyboard shortcuts
+  - Menu bar integration
+  - Siri voice control
+  - Finder context menu
+
+- Scripts installed to `~/.floppies-shortcuts/`
+- Complete guide with examples at `~/.floppies-shortcuts/README.md`
+
 ### 🔓 Hacker Essentials (NEW!)
 **40+ tools based on Reddit, StackOverflow, YouTube - "A Hacker's Must-Have Terminal"**
 

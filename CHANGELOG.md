@@ -7,6 +7,28 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added - macOS Shortcuts Integration
+- **macOS Shortcuts Module** (`scripts/install-macos-shortcuts.sh`)
+  - 10 pre-built helper scripts for terminal automation
+  - Git Quick Commit with AI messages
+  - Project Launcher (VSCode + Terminal)
+  - System Info quick view
+  - Todo Quick Add integration
+  - Docker Quick Manager
+  - Screenshot Organizer
+  - AI Command Helper
+  - Network Speed Test
+  - Coffee Break Timer (Pomodoro)
+  - Clipboard Manager with history
+  
+- **Shortcuts Integration Guide** (comprehensive README in `~/.floppies-shortcuts/`)
+  - Instructions for creating shortcuts in Shortcuts.app
+  - Keyboard shortcut recommendations (⌘⇧[A-Z])
+  - Examples for Alfred, Raycast, BetterTouchTool, Hammerspoon
+  - Advanced automation workflows
+  - Voice control via Siri
+  - Context menu integration
+
 ### Added - Hacker Essentials
 - **Hacker Essentials Module** (`scripts/install-hacker-essentials.sh`)
   - 40+ tools based on Reddit (r/hacking, r/netsec, r/sysadmin), StackOverflow, YouTube

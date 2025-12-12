@@ -156,6 +156,11 @@ install_full() {
     source "$SCRIPT_DIR/scripts/install-community-favorites.sh"
     install_community_favorites
     
+    # Install macOS Shortcuts (macOS only)
+    if [[ "$OSTYPE" == "darwin"* ]]; then
+        source "$SCRIPT_DIR/scripts/install-macos-shortcuts.sh"
+    fi
+    
     # Configure dotfiles
     source "$SCRIPT_DIR/scripts/configure-dotfiles.sh"
     configure_dotfiles
@@ -183,7 +188,8 @@ custom_installation() {
     echo "11. Shell Enhancements (thefuck, autojump, direnv, mosh)"
     echo "12. Community Favorites (lazygit, btop++, ranger, lf, eza, zoxide)"
     echo "13. Hacker Essentials (nmap, radare2, strace, tcpdump, network tools)"
-    echo "14. Dotfiles Configuration"
+    echo "14. macOS Shortcuts Integration (automate terminal workflows)"
+    echo "15. Dotfiles Configuration"
     echo "0. Back to main menu"
     echo "=================================="
     echo -n "Select options (comma-separated, e.g., 1,2,3): "
@@ -248,6 +254,13 @@ custom_installation() {
                 install_hacker_essentials
                 ;;
             14)
+                if [[ "$OSTYPE" == "darwin"* ]]; then
+                    source "$SCRIPT_DIR/scripts/install-macos-shortcuts.sh"
+                else
+                    log_warning "macOS Shortcuts integration is only available on macOS"
+                fi
+                ;;
+            15)
                 source "$SCRIPT_DIR/scripts/configure-dotfiles.sh"
                 configure_dotfiles
                 ;;
