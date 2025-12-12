@@ -211,12 +211,23 @@ install_todo_management() {
             
             # Taskbook - Tasks and notes in terminal
             npm install -g taskbook
+            
+            # ntodotxt - Cross-platform todo.txt with mobile sync
+            if ! command -v ntodotxt &> /dev/null; then
+                log_info "Installing ntodotxt..."
+                pip3 install ntodotxt
+            fi
             ;;
         ubuntu|debian)
             # todo.txt-cli
             if ! command -v todo.sh &> /dev/null; then
                 log_info "Installing todo.txt-cli..."
                 sudo apt-get install -y todotxt-cli
+            fi
+            
+            # ntodotxt
+            if command -v pip3 &> /dev/null; then
+                pip3 install --user ntodotxt
             fi
             
             # Taskwarrior
@@ -255,6 +266,57 @@ export REPORT_FILE="$TODO_DIR/report.txt"
 EOF
     fi
     
+    # Setup GitHub sync for todo.txt (optional)
+    log_info "Setting up todo.txt GitHub sync..."
+    cat > "$HOME/.todo/sync-setup.sh" << 'EOF'
+#!/usr/bin/env bash
+# Todo.txt GitHub Sync Setup Script
+# This script helps you set up automatic syncing of todo.txt via GitHub
+
+echo "📝 Todo.txt GitHub Sync Setup"
+echo "================================"
+echo ""
+echo "This will create a private GitHub repository to sync your todo.txt files"
+echo "across devices (including Android via Termux with termux-tasker)."
+echo ""
+read -p "Do you want to set up GitHub sync? (y/n) " -n 1 -r
+echo ""
+
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    cd "$HOME/.todo" || exit 1
+    
+    # Initialize git if not already initialized
+    if [ ! -d ".git" ]; then
+        git init
+        echo "todo.txt" > .gitignore
+        echo "done.txt" >> .gitignore
+        echo "report.txt" >> .gitignore
+        git add .gitignore config
+        git commit -m "Initial commit: todo.txt setup"
+    fi
+    
+    echo ""
+    echo "Next steps:"
+    echo "1. Create a private GitHub repository (e.g., 'todo-sync')"
+    echo "2. Run: git remote add origin git@github.com:YOUR_USERNAME/todo-sync.git"
+    echo "3. Run: git push -u origin main"
+    echo ""
+    echo "For Android sync with Termux:"
+    echo "1. Install Termux and Termux:Tasker from F-Droid"
+    echo "2. In Termux: pkg install git openssh"
+    echo "3. Setup SSH keys: ssh-keygen && cat ~/.ssh/id_rsa.pub"
+    echo "4. Add the key to your GitHub account"
+    echo "5. Clone the repo: git clone git@github.com:YOUR_USERNAME/todo-sync.git ~/.todo"
+    echo "6. Create Termux:Tasker script for auto-sync"
+    echo ""
+    echo "Sample Termux sync script (~/.termux/tasker/todo-sync.sh):"
+    echo "#!/data/data/com.termux/files/usr/bin/bash"
+    echo "cd ~/.todo && git pull && git add -A && git commit -m \"Auto-sync \$(date)\" && git push"
+fi
+EOF
+    chmod +x "$HOME/.todo/sync-setup.sh"
+    
+    log_info "Run ~/.todo/sync-setup.sh to configure GitHub sync for todo.txt"
     log_success "Todo management tools installed!"
 }
 

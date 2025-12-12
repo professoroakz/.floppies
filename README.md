@@ -184,6 +184,40 @@ That's it! The installer will guide you through the setup process.
 
 - See [docs/COMMUNITY_FAVORITES.md](docs/COMMUNITY_FAVORITES.md) for complete guide
 
+### 🔓 Hacker Essentials (NEW!)
+**40+ tools based on Reddit, StackOverflow, YouTube - "A Hacker's Must-Have Terminal"**
+
+- **Network Analysis**:
+  - `nmap`, `masscan`, `rustscan`, `zmap` - Network scanning
+  - `wireshark`, `tshark`, `termshark` - Packet analysis
+  - `tcpdump`, `netsniff-ng` - Packet capture
+  - `gping`, `bandwhich`, `dog`, `mtr` - Modern network tools
+
+- **Reverse Engineering**:
+  - `radare2`, `rizin` - Disassemblers
+  - `ghidra` - NSA's decompiler
+  - `gdb`, `lldb` - Debuggers
+  - `binwalk`, `hexyl`, `hexedit` - Binary analysis
+
+- **Debugging & Monitoring**:
+  - `strace`, `ltrace` - System/library call tracing
+  - `lsof` - List open files
+  - `valgrind` - Memory debugging
+  - `btop++`, `htop`, `glances`, `bottom`, `procs` - System monitoring
+
+- **Cross-Platform CLIs**:
+  - `jq`, `yq`, `fx`, `gron` - JSON/YAML processing
+  - `xsv` - CSV toolkit
+  - `rsync`, `rclone`, `croc` - File sync/transfer
+  - `syncthing` - P2P file sync
+
+- **Todo.txt Sync**:
+  - `ntodotxt` - Cross-platform todo.txt with mobile sync
+  - GitHub sync setup for Android/Termux
+  - Automatic sync script generation
+
+- See [docs/HACKER_ESSENTIALS.md](docs/HACKER_ESSENTIALS.md) for complete guide with workflows
+
 ## 🌍 Platform Support
 
 .floppies works on all major platforms:

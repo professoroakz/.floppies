@@ -182,7 +182,8 @@ custom_installation() {
     echo "10. Programming Fonts (Fira Code, JetBrains Mono, Nerd Fonts)"
     echo "11. Shell Enhancements (thefuck, autojump, direnv, mosh)"
     echo "12. Community Favorites (lazygit, btop++, ranger, lf, eza, zoxide)"
-    echo "13. Dotfiles Configuration"
+    echo "13. Hacker Essentials (nmap, radare2, strace, tcpdump, network tools)"
+    echo "14. Dotfiles Configuration"
     echo "0. Back to main menu"
     echo "=================================="
     echo -n "Select options (comma-separated, e.g., 1,2,3): "
@@ -243,6 +244,10 @@ custom_installation() {
                 install_community_favorites
                 ;;
             13)
+                source "$SCRIPT_DIR/scripts/install-hacker-essentials.sh"
+                install_hacker_essentials
+                ;;
+            14)
                 source "$SCRIPT_DIR/scripts/configure-dotfiles.sh"
                 configure_dotfiles
                 ;;

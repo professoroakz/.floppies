@@ -5,6 +5,23 @@ All notable changes to .floppies will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Added - Hacker Essentials
+- **Hacker Essentials Module** (`scripts/install-hacker-essentials.sh`)
+  - 40+ tools based on Reddit (r/hacking, r/netsec, r/sysadmin), StackOverflow, YouTube
+  - Network analysis: nmap, masscan, rustscan, zmap, wireshark, termshark, tcpdump
+  - Modern network: gping, bandwhich, dog, mtr
+  - Reverse engineering: radare2, rizin, ghidra, gdb, lldb, binwalk, hexyl
+  - Debugging: strace, ltrace, lsof, valgrind
+  - System monitoring: btop++, htop, glances, bottom, procs
+  - Cross-platform CLIs: jq, yq, fx, gron, xsv
+  - File sync: syncthing, rclone, rsync, croc
+  
+- **ntodotxt**: Cross-platform todo.txt with mobile sync support
+- **Todo.txt GitHub Sync**: Automatic setup script for syncing via GitHub to Android/Termux
+- **Comprehensive Hacker Essentials Guide** (12,000+ words at `docs/HACKER_ESSENTIALS.md`)
+
 ## [1.3.0] - 2024-12-12
 
 ### Added - Community Favorites
