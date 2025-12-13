@@ -310,6 +310,16 @@ Decentralized, secure communication.
 - Open source, self-hostable
 - Bridge to other services
 
+### Status
+
+Decentralised wallet and messenger built on Ethereum.
+
+- Secure messaging with E2E encryption
+- Built-in cryptocurrency wallet
+- DApp browser for Web3 applications
+- **macOS:** Automatically installed on Apple Silicon. Intel Mac users should download from [status-desktop releases](https://github.com/status-im/status-desktop/releases)
+- Desktop app: `/Applications/Status.app` (macOS)
+
 ---
 
 ## Password Managers
