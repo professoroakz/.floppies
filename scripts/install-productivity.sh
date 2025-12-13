@@ -353,6 +353,23 @@ install_communication_tools() {
             # Element (Matrix client)
             brew install --cask element
             
+            # Status (Decentralised wallet and messenger)
+            # Check architecture for Status app
+            ARCH=$(uname -m)
+            if [ "$ARCH" = "arm64" ]; then
+                # Apple Silicon - install directly
+                brew install --cask status
+            elif [ "$ARCH" = "x86_64" ]; then
+                # Intel Mac - check if Status.app is already installed or download manually
+                if [ ! -d "/Applications/Status.app" ]; then
+                    log_info "Status app requires manual installation for Intel Mac"
+                    log_info "Download from: https://github.com/status-im/status-desktop/releases"
+                    log_info "Look for x86_64 or universal DMG builds"
+                else
+                    log_info "Status.app already installed"
+                fi
+            fi
+            
             # Slack CLI
             if ! command -v slack &> /dev/null; then
                 log_info "Install Slack CLI from: https://api.slack.com/automation/cli/install"
